@@ -1,2 +1,2 @@
 # Hello World
-This is a test.
+This is the first test of the blogging software.
