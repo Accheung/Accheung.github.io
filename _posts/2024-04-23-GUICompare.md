@@ -14,7 +14,8 @@ This also facilitates database comparison, whose output is dispalyed on the GUI 
         np.savez(path, self.valid_minutiae, self.local_structures)
         self.name.set('')       
 ```
-```    def local_struct_compare(self):
+```
+def local_struct_compare(self):
         f1, m1, ls1 = self.fingerprint, self.valid_minutiae, self.local_structures
 
         self.positives = []
