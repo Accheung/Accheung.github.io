@@ -1,0 +1,35 @@
+## Third post
+Two helper functions were implemented:
+
+```   def importfinger(self):
+        filelist=os.listdir('../DB1_B')
+        for file in filelist:
+            if (file.endswith('.png') | file.endswith('.tif')):
+                self.path=os.path.abspath(f'../DB1_B/{file}')
+                self.image = Image.open(self.path)
+                self.gen()
+                self.enroll()
+'''
+'''    def evaluate(self):
+        filelist = os.listdir('./database')
+
+        self.thresh_pos = []
+
+        for i in range(20, 28):
+            
+            self.threshold = i / 40
+            print (self.threshold)
+            self.folder_pos = []
+            for file in filelist:
+                if (file.endswith('.png')):
+                    self.path=os.path.abspath(f'./database/{file}')
+                    self.image = Image.open(self.path)
+                    self.gen()
+                    self.compare()
+                    self.folder_pos.append(self.pos_len)
+            
+            self.thresh_pos.append(self.folder_pos)
+        
+        np.save("Evals1", self.thresh_pos)
+        print(self.thresh_pos)
+'''
