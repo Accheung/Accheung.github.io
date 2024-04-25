@@ -1,6 +1,7 @@
 ## Third post
 Two helper functions were implemented:
-
+1. importfinger - This function imports an entire folder of fingerprints in png or tif format, then generates the coresponding npz file for each and enroll them into the database folder.
+1. evaluate - This function tests the fingerprint recognition model by running compare for every print within the given database folder against every print in said folder. Its output is an array of arrays containing the number of positive identifications for the given thresholds. At the moment, it is configured the test all thresholds from 0.5 to 1 at 0.025 increments.
 ```   def importfinger(self):
         filelist=os.listdir('../DB1_B')
         for file in filelist:
@@ -15,7 +16,7 @@ Two helper functions were implemented:
 
         self.thresh_pos = []
 
-        for i in range(20, 28):
+        for i in range(20, 40):
             
             self.threshold = i / 40
             print (self.threshold)
