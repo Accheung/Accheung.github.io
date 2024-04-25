@@ -1,0 +1,23 @@
+Second Post
+This is my second update.
+Generated minutiae and local structures can now be saved into database folders as .npz files.
+This also facilitates database comparison, whose output is dispalyed on the GUI via a label.
+
+```       
+    def upload(self):
+        self.path = tk.filedialog.askopenfilename(filetypes=[('image files', ('.png', '.tif'))])
+        if (self.path):
+            self.image = Image.open(self.path)
+            self.ctkimage = CTkImage(self.image, size=(100,150))
+            self.enroll_im.configure(image=self.ctkimage)
+    
+    def enroll(self):
+        self.enroll_b.configure(state=DISABLED)
+        if (self.name.get() != ''):
+            path = "./samples/" + self.name.get()
+        else:
+            path = "./samples/" + Path(self.path).stem
+        self.image.save(f"{path}.png")
+        np.savez(path, self.valid_minutiae, self.local_structures)
+        self.name.set('')       
+```
