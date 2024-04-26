@@ -1,4 +1,4 @@
-## Second Post
+## Second Post - GUI Functionality
 This is my second update.
 Generated minutiae and local structures can now be saved into database folders as .npz files.
 This also facilitates database comparison, whose output is dispalyed on the GUI via a label.
